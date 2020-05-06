@@ -176,9 +176,16 @@ input[type="submit"] {
   display: none;
 }
 
+.p_card_display {
+  height: 19%;
+  width: 100%;
+  background-color: grey;
+}
+
 /*置底共用*/
 .bottom {
   width: 100%;
   height: 8%;
   background-color: red;
+  margin: 0px auto;
 }

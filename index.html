@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-  <script type="main.js"></script>
+
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -31,7 +31,7 @@
     </div>
 
 
-    <div class="p_select-btn-extend">
+    <div class="p_select-btn-extend d-none">
       <div class="p_select_detail">
         <div class="p_select-font">+ 篩選條件</div>
         <div class="p_select_detail2">
@@ -77,7 +77,7 @@
           </div>
 
           <div class="p_equal">
-            <input class="submit-size" type="submit" value="搜尋" style="margin-left:25%;">
+            <input class="submit-size" name="submit" type="submit" value="搜尋" style="margin-left:25%;">
             <input class="submit-size" type="submit" value="取消">
           </div>
 
@@ -90,12 +90,15 @@
 
 
 
-
+    <div class="p_card_display">
+      card
+    </div>
   </div>
   <div class="bottom">
     bottom
   </div>
 
+  <script src="main.js"></script>
 </body>
 
 </html>
