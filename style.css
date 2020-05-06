@@ -39,7 +39,7 @@ input[type="text"] {
   border-radius: 25px;
   border-style: solid;
   border-color: #484848;
-  border-width: 1px;
+  border-width: 2px;
   background-color: #f3f3f3;
   font-size: 2.3em;
 }
@@ -59,19 +59,19 @@ input[type="text"] {
 
 input[type="submit"] {
   margin-top: 0.5%;
-  border-radius: 7px;
+  border-radius: 18px;
   background-color: #2B2D34;
   color: white;
   border: none;
-  width: 15%;
+  width: 21%;
   height: 80%;
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 /*篩選條件延展*/
 .p_select-btn-extend {
   height: 75%;
-  width: 70%;
+  width: 95%;
   margin: 0px auto;
 }
 
@@ -81,14 +81,14 @@ input[type="submit"] {
   flex-direction: column;
   background-color: #2B2D34;
   position: relative;
-  border-radius: 12px;
+  border-radius: 22px;
   height: 100%;
   width: 100%;
 }
 
 /*篩選條件的字*/
 .p_select-font {
-  font-size: 90%;
+  font-size: 2.2em;
   color: white;
   margin: 1.2%
 }
@@ -99,9 +99,10 @@ input[type="submit"] {
   flex-direction: column;
   position: relative;
   text-align: left;
+  font-size: 2.2em;
   color: white;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 92%;
   margin: 0px auto;
   background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
   background: linear-gradient(180deg, rgb(39, 40, 43), rgb(120, 121, 125));
@@ -120,21 +121,29 @@ input[type="submit"] {
 #p_bank {
   flex: 1;
   margin: 2% 2% 0 3%;
-  font-size: 1em;
 }
 
 #p_bank-option {
-  flex: 1;
-  margin: 2% 2% 0 3%;
+  flex: 4;
+  margin: 1% 2% 0 3%;
 }
 
 /*要小修寬度跟箭頭方向*/
 #p_bank-option-content {
-  font-size: 1em;
-  border-radius: 7px;
-  border-color: #F9D803;
+  width: 60%;
+  height: 90%;
+  border-radius: 22px;
+  border-width: thick;
+  border-color: #FFDD00;
   background-color: #323437;
   color: white;
+  font-size: 1em;
+  text-align: center;
+  text-align-last: center;
+}
+
+.p_option_size {
+  font-size: 0.4em;
 }
 
 /*選項*/
@@ -142,6 +151,17 @@ input[type="submit"] {
   flex: 1;
   width: 100%;
   margin: 2% 2% 0 3%;
+}
+
+.p_border_style {
+  border-style: solid;
+  border-radius: 25px;
+  border-color: #FFDD00;
+  padding: 9px;
+}
+
+.p_underline {
+  text-decoration: underline;
 }
 
 .text-size {
