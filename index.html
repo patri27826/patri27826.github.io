@@ -44,7 +44,7 @@
 
       margin-top: 0.3%;
       border-radius: 7px;
-      background-color: black;
+      background-color: #2B2D34;
       color: white;
       border: none;
       width: 15%;
@@ -70,14 +70,15 @@
     .p_select_detail {
       position: relative;
       border-radius: 12px;
-      height: 60%;
-      width: 45%;
-      margin-left: 27.5%;
-      background-color: #2B2D34;
+      height: 100%;
+      width: 100%;
 
+      background-color: #2B2D34;
+      display: flex;
+      flex-direction: column;
     }
 
-    .p_select_detail::before {
+    /* .p_select_detail::before {
       content: '';
       width: 0;
       height: 100%;
@@ -85,20 +86,24 @@
       position: relative;
       vertical-align: middle;
       background: #f00;
-    }
+    } */
 
     .p_select_detail2 {
       position: relative;
       width: 90%;
-      height: 80%;
+      height: 90%;
       margin: 0px auto;
-      display: inline-block;
-      vertical-align: middle;
+      /* display: inline-block;
+      vertical-align: middle; */
       background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
       background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
 
+    }
 
-
+    .p_select-font {
+      font-size: 90%;
+      color: white;
+      margin: 1.2%
     }
   </style>
 </head>
@@ -118,12 +123,14 @@
     <div class="p_select_btn " style="height:6%">
       <input type="submit" name="select" value="+篩選條件">
     </div>
-
-    <div class="p_select_detail ">
-      <div class="p_select_detail2">
-
+    <div class=" " style="height: 60%;width: 45%;margin:0px auto">
+      <div class="p_select_detail">
+        <div class="p_select-font">+篩選條件</div>
+        <div class="p_select_detail2 ">
+        </div>
       </div>
     </div>
+
 
 
 
