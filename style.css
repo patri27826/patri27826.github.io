@@ -169,7 +169,7 @@ input[type="submit"] {
 }
 
 .submit-size {
-  margin: 0 10% 1% 27%;
+  font-size: 1em !important;
 }
 
 .d-none {
