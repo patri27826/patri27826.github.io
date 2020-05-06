@@ -4,15 +4,15 @@
 
 <head>
   <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   <title></title>
   <style media="screen">
     header {
 
       background-color: white;
       margin: 0px auto;
-      padding-left: 1em;
       width: 100%;
-      height: 2.5em;
+      height: 8%;
       display: flex;
     }
 
@@ -23,8 +23,10 @@
     input[type="text"] {
 
       margin-top: 1em;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
       width: 95%;
-      height: 60%;
+      height: 70%;
       border-radius: 7px;
       border-style: solid;
       border-color: #484848;
@@ -33,39 +35,106 @@
     }
 
     .p_search {
+      display: flex;
       position: relative;
-      height: 100%;
+      height: 12%;
     }
 
     input[type="submit"] {
-      margin-top: 1%;
+
+      margin-top: 0.3%;
       border-radius: 7px;
       background-color: black;
       color: white;
       border: none;
+      width: 15%;
+      height: 80%;
+      font-size: 90%;
+    }
+
+    .p_ni {
+      width: 100%;
+      height: 84%;
+    }
+
+    .bottom {
+      width: 100%;
+      height: 8%;
+      background-color: red;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .p_select_detail {
+      position: relative;
+      border-radius: 12px;
+      height: 60%;
+      width: 45%;
+      margin-left: 27.5%;
+      background-color: #2B2D34;
+
+    }
+
+    .p_select_detail::before {
+      content: '';
+      width: 0;
+      height: 100%;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      background: #f00;
+    }
+
+    .p_select_detail2 {
+      position: relative;
+      width: 90%;
+      height: 80%;
+      margin: 0px auto;
+      display: inline-block;
+      vertical-align: middle;
+      background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+      background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+
+
+
     }
   </style>
 </head>
 
 <body style="text-align: center;margin: 0;height:100%">
   <header>
-    <img src="ham.svg" alt="">
+    <img src="ham.svg" alt="" style="position:relative;left:2%;">
   </header>
 
-  <div class="p_ni" style="height:10%">
+  <div class="p_ni">
 
     <div class="p_search">
       <input type="text" name="search">
-      <img src="q.svg" style="position:absolute ;right:4% ;top:43% ">
+      <img src="q.svg" style="position:relative ;right:8% ;top:16%;width:2.5%; ">
     </div>
 
-    <div>
-      <input type="submit" name="" value="+篩選條件">
+    <div class="p_select_btn " style="height:6%">
+      <input type="submit" name="select" value="+篩選條件">
+    </div>
+
+    <div class="p_select_detail ">
+      <div class="p_select_detail2">
+
+      </div>
     </div>
 
 
 
   </div>
+  <div class="bottom">
+    bottom
+  </div>
+
+  <script>
+    $()
+  </script>
 </body>
 
 </html>
