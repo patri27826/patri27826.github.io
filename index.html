@@ -5,124 +5,25 @@
 <head>
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-  <title></title>
-  <style media="screen">
-    header {
-
-      background-color: white;
-      margin: 0px auto;
-      width: 100%;
-      height: 8%;
-      display: flex;
-    }
-
-    body {
-      background-color: #f3f3f3;
-    }
-
-    input[type="text"] {
-
-      margin-top: 1em;
-      margin-left: 2.5%;
-      margin-right: 2.5%;
-      width: 95%;
-      height: 70%;
-      border-radius: 7px;
-      border-style: solid;
-      border-color: #484848;
-      border-width: 1px;
-      background-color: #f3f3f3;
-    }
-
-    .p_search {
-      display: flex;
-      position: relative;
-      height: 12%;
-    }
-
-    input[type="submit"] {
-
-      margin-top: 0.3%;
-      border-radius: 7px;
-      background-color: #2B2D34;
-      color: white;
-      border: none;
-      width: 15%;
-      height: 80%;
-      font-size: 90%;
-    }
-
-    .p_ni {
-      width: 100%;
-      height: 84%;
-    }
-
-    .bottom {
-      width: 100%;
-      height: 8%;
-      background-color: red;
-    }
-
-    .d-none {
-      display: none;
-    }
-
-    .p_select_detail {
-      position: relative;
-      border-radius: 12px;
-      height: 100%;
-      width: 100%;
-
-      background-color: #2B2D34;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    /* .p_select_detail::before {
-      content: '';
-      width: 0;
-      height: 100%;
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      background: #f00;
-    } */
-
-    .p_select_detail2 {
-      position: relative;
-      width: 90%;
-      height: 85%;
-      margin: 0px auto;
-      display: flex;
-      color: white;
-      /* display: inline-block;
-      vertical-align: middle; */
-      background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-      background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-      flex-wrap: wrap;
-      text-align: left;
-    }
-
-    .p_select-font {
-      font-size: 90%;
-      color: white;
-      margin: 1.2%
-    }
-  </style>
+  <script type="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
 
-<body style="text-align: center;margin: 0;height:100%">
+<body>
   <header>
-    <img src="ham.svg" alt="" style="position:relative;left:2%;">
+    <img src="pic/ham.svg" alt="hamburger" id="ham">
   </header>
 
+  <!--p_ni最外面ㄉdiv-->
   <div class="p_ni">
 
+    <!--搜尋欄-->
     <div class="p_search">
       <input type="text" name="search">
-      <img src="q.svg" style="position:relative ;right:8% ;top:16%;width:2.5%; ">
+      <img src="pic/q.svg" class="p_q">
     </div>
+
 
     <div class="p_select_btn " style="height:6%">
       <input type="submit" name="select" value="+篩選條件">
@@ -132,22 +33,64 @@
         <div class="p_select-font">+篩選條件</div>
         <div class="p_select_detail2 ">
 
+          <div class="" style="height: 10%;width:100%;display:flex;flex-direction:row;">
+            <span>發卡銀行</span>
+            <form>
+              <select name="yourbank">
+                　<option value="Taipei">玉山銀行</option>
+                　<option value="Taoyuan">國泰銀行</option>
+                　<option value="Hsinchu">永豐銀行</option>
+                　<option value="Miaoli">第一銀行</option>
+                　...
+              </select>
+            </form>
+          </div>
+          <div style="height: 10%;width:100%;">國內回饋</div>
+
+          <div style="height: 10%;width:100%;">
+            <span> &lt 1.00% </span>
+            <span> &gt 1.00% </span>
+            <span> &gt 2.50% </span>
+          </div>
+
+
+          <div style="height: 10%;width:100%;">國外回饋</div>
+          <div style="height: 10%;width:100%;">
+            <span> &lt 2.00% </span>
+            <span> &gt 2.00% </span>
+          </div>
+          <div style="height: 10%;width:100%;">年費</div>
+          <div style="height: 10%;width:100%;">
+            <span> NTD 0 </span>
+            <span> &lt NTD 3000 </span>
+            <span> &gt NTD 3000 </span>
+          </div>
+          <div style="height: 10%;width:100%;">國際組織</div>
+          <div style="height: 10%;width:100%;">
+            <span> Mastercard </span>
+            <span> VISA</span>
+            <span> AE </span>
+            <span> JCB</span>
+          </div>
+          <div style="height: 10%;width:100%;">
+            <input type="submit" name="搜尋" value="">
+            <input type="submit" name="取消" value="">
+          </div>
 
         </div>
       </div>
+    </div>
+
+    <div class="bottom">
+      bottom
     </div>
 
 
 
 
   </div>
-  <div class="bottom">
-    bottom
-  </div>
 
-  <script>
-    $()
-  </script>
+
 </body>
 
 </html>
