@@ -3,145 +3,49 @@
 <meta name=" viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-  <title></title>
-  <style media="screen">
-    header {
-
-      background-color: white;
-      margin: 0px auto;
-      width: 100%;
-      height: 8%;
-      display: flex;
-    }
-
-    body {
-      background-color: #f3f3f3;
-    }
-
-    input[type="text"] {
-
-      margin-top: 1em;
-      margin-left: 2.5%;
-      margin-right: 2.5%;
-      width: 95%;
-      height: 70%;
-      border-radius: 7px;
-      border-style: solid;
-      border-color: #484848;
-      border-width: 1px;
-      background-color: #f3f3f3;
-    }
-
-    .p_search {
-      display: flex;
-      position: relative;
-      height: 12%;
-    }
-
-    input[type="submit"] {
-
-      margin-top: 0.3%;
-      border-radius: 7px;
-      background-color: #2B2D34;
-      color: white;
-      border: none;
-      width: 15%;
-      height: 80%;
-      font-size: 90%;
-    }
-
-    .p_ni {
-      width: 100%;
-      height: 84%;
-    }
-
-    .bottom {
-      width: 100%;
-      height: 8%;
-      background-color: red;
-    }
-
-    .d-none {
-      display: none;
-    }
-
-    .p_select_detail {
-      position: relative;
-      border-radius: 12px;
-      height: 100%;
-      width: 100%;
-
-      background-color: #2B2D34;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* .p_select_detail::before {
-      content: '';
-      width: 0;
-      height: 100%;
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      background: #f00;
-    } */
-
-    .p_select_detail2 {
-      position: relative;
-      width: 90%;
-      height: 90%;
-      margin: 0px auto;
-      /* display: inline-block;
-      vertical-align: middle; */
-      background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-      background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-
-    }
-
-    .p_select-font {
-      font-size: 90%;
-      color: white;
-      margin: 1.2%
-    }
-  </style>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script type="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 
-<body style="text-align: center;margin: 0;height:100%">
-  <header>
-    <img src="ham.svg" alt="" style="position:relative;left:2%;">
-  </header>
+<body>
+    <header>
+        <img src="pic/ham.svg" alt="hamburger" id="ham">
+    </header>
 
-  <div class="p_ni">
+<!--p_ni最外面ㄉdiv-->
+    <div class="p_ni">
 
-    <div class="p_search">
-      <input type="text" name="search">
-      <img src="q.svg" style="position:relative ;right:8% ;top:16%;width:2.5%; ">
-    </div>
-
-    <div class="p_select_btn " style="height:6%">
-      <input type="submit" name="select" value="+篩選條件">
-    </div>
-    <div class=" " style="height: 60%;width: 45%;margin:0px auto">
-      <div class="p_select_detail">
-        <div class="p_select-font">+篩選條件</div>
-        <div class="p_select_detail2 ">
+<!--搜尋欄-->
+        <div class="p_search">
+             <input type="text" name="search">
+             <img src="pic/q.svg" class="p_q">
         </div>
-      </div>
+
+
+        <div class="p_select_btn " style="height:6%">
+          <input type="submit" name="select" value="+篩選條件">
+        </div>
+        <div class=" " style="height: 60%;width: 45%;margin:0px auto">
+          <div class="p_select_detail">
+            <div class="p_select-font">+篩選條件</div>
+            <div class="p_select_detail2 ">
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+            bottom
+        </div>
+
+
+
+
     </div>
 
 
-
-
-  </div>
-  <div class="bottom">
-    bottom
-  </div>
-
-  <script>
-    $()
-  </script>
 </body>
 
 </html>
