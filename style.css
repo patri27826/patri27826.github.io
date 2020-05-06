@@ -1,88 +1,83 @@
 body {
-    text-align: center;
-    margin: 0;
-    height:100%;
-    background-color: #f3f3f3;
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  background-color: #f3f3f3;
 }
 
 header {
-    display: flex;
-    position: relative;
-    background-color: #ffffff;
-    margin: 0 auto;
-    width: 100%;
-    height: 8%;
+  display: flex;
+  position: relative;
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  height: 8%;
 }
 
 #ham {
-    margin-left: 2%;
+  margin-left: 2%;
 }
 
 /*搜尋欄跟放大鏡的父層*/
 .p_search {
-    display: flex;
-    position: relative;
-    height: 12%;
+  display: flex;
+  position: relative;
+  height: 12%;
 }
 
 input[type="text"] {
-    margin: 1% 2.5% 0 2.5%;
-    width: 95%;
-    height: 70%;
-    border-radius: 7px;
-    border-style: solid;
-    border-color: #484848;
-    border-width: 1px;
-    background-color: #f3f3f3;
+  margin: 1% 2.5% 0 2.5%;
+  width: 90%;
+  height: 70%;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: #484848;
+  border-width: 1px;
+  background-color: #f3f3f3;
 }
 
 /*放大鏡*/
 .p_q {
-    position:relative ;
-    right:8%;
-    top:16%;
-    width:2.5%;
+  position: absolute;
+  right: 8%;
+  top: 16%;
+  width: 2.5%;
 }
 
-
-
-
 input[type="submit"] {
-
-    margin-top: 0.3%;
-    border-radius: 7px;
-    background-color: #2B2D34;
-    color: white;
-    border: none;
-    width: 15%;
-    height: 80%;
-    font-size: 90%;
+  margin-top: 0.3%;
+  border-radius: 7px;
+  background-color: #2B2D34;
+  color: white;
+  border: none;
+  width: 15%;
+  height: 80%;
+  font-size: 90%;
 }
 
 .p_ni {
-    width: 100%;
-    height: 84%;
+  width: 100%;
+  height: 84%;
 }
 
 .bottom {
-    width: 100%;
-    height: 8%;
-    background-color: red;
+  width: 100%;
+  height: 8%;
+  background-color: red;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 .p_select_detail {
-    position: relative;
-    border-radius: 12px;
-    height: 100%;
-    width: 100%;
-
-    background-color: #2B2D34;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  background-color: #2B2D34;
+  display: flex;
+  flex-direction: column;
 }
 
 /* .p_select_detail::before {
@@ -94,21 +89,21 @@ input[type="submit"] {
   vertical-align: middle;
   background: #f00;
 } */
-
 .p_select_detail2 {
-    position: relative;
-    width: 90%;
-    height: 90%;
-    margin: 0px auto;
-    /* display: inline-block;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  margin: 0px auto;
+  /* display: inline-block;
     vertical-align: middle; */
-    background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-    background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-
+  background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+  background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+  display: flex;
+  flex-direction: column;
 }
 
 .p_select-font {
-    font-size: 90%;
-    color: white;
-    margin: 1.2%
+  font-size: 90%;
+  color: white;
+  margin: 1.2%
 }
