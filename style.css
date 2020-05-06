@@ -5,12 +5,6 @@ body {
     background-color: #f3f3f3;
 }
 
-/*最外層container*/
-.p_ni {
-    width: 100%;
-    height: 84%;
-}
-
 header {
     display: flex;
     position: relative;
@@ -26,6 +20,7 @@ header {
 
 /*搜尋欄跟放大鏡的父層*/
 .p_search {
+    display: flex;
     position: relative;
     height: 12%;
 }
@@ -43,19 +38,18 @@ input[type="text"] {
 
 /*放大鏡*/
 .p_q {
-    position: absolute;
-    right: 3.5%;
-    top: 35%;
-    width: 2.5%;
+    position:relative ;
+    right:8%;
+    top:16%;
+    width:2.5%;
 }
 
-/*篩選條件*/
-.p_select-btn-show {
-    height: 6%;
-}
+
+
 
 input[type="submit"] {
-    margin-top: 0.5%;
+
+    margin-top: 0.3%;
     border-radius: 7px;
     background-color: #2B2D34;
     color: white;
@@ -65,91 +59,56 @@ input[type="submit"] {
     font-size: 90%;
 }
 
-/*篩選條件延展*/
-.p_select-btn-extend {
-    height: 60%;
-    width: 45%;
-    margin:0px auto;
-}
-
-/*延展後大方格*/
-.p_select_detail {
-    display: flex;
-    flex-direction: column;
-    background-color: #2B2D34;
-    position: relative;
-    border-radius: 12px;
-    height: 100%;
+.p_ni {
     width: 100%;
+    height: 84%;
 }
 
-/*篩選條件的字*/
-.p_select-font {
-    font-size: 90%;
-    color: white;
-    margin: 1.2%
-}
-
-/*大方格內漸層框框*/
-.p_select_detail2 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: left;
-    width: 90%;
-    height: 90%;
-    margin: 0px auto;
-    background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
-    background: linear-gradient(180deg, rgb(39, 40, 43), rgb(120, 121, 125));
-}
-
-.p_wrap-bank {
-    flex: 1;
+.bottom {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: left;
+    height: 8%;
+    background-color: red;
 }
-
-/*發卡銀行*/
-#p_bank {
-    flex: 1;
-    margin: 2% 2% 0 3%;
-    font-size:1em;
-}
-
-#p_bank-option {
-    flex: 1;
-    margin: 2% 2% 0 3%;
-}
-
-/*要小修寬度跟箭頭方向*/
-#p_bank-option-content {
-    font-size: 1em;
-    border-radius: 7px;
-    border-color: #F9D803;
-    background-color: #323437;
-    color: white;
-}
-
-
-/*選項*/
-.p_equal {
-    flex: 1;
-    width: 100%;
-    margin: 2% 2% 0 3%;
-}
-
 
 .d-none {
     display: none;
 }
 
-
-/*置底共用*/
-.bottom {
+.p_select_detail {
+    position: relative;
+    border-radius: 12px;
+    height: 100%;
     width: 100%;
-    height: 8%;
-    background-color: red;
+
+    background-color: #2B2D34;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .p_select_detail::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  background: #f00;
+} */
+
+.p_select_detail2 {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 0px auto;
+    /* display: inline-block;
+    vertical-align: middle; */
+    background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+    background: linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+
+}
+
+.p_select-font {
+    font-size: 90%;
+    color: white;
+    margin: 1.2%
 }
