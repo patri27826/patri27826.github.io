@@ -45,7 +45,7 @@ input[type="text"] {
   margin: 1% 2.5% 0 2.5%;
   width: 90%;
   height: 70%;
-  border-radius: 25px;
+  border-radius: 0.8em;
   border-style: solid;
   border-color: #484848;
   border-width: 2px;
@@ -68,13 +68,13 @@ input[type="text"] {
 
 input[type="submit"] {
   margin-top: 0.5%;
-  border-radius: 18px;
+  border-radius: 0.8em;
   background-color: #2B2D34;
   color: white;
   border: none;
-  width: 21%;
+  width: 26%;
   height: 80%;
-  font-size: 2.2em;
+  font-size: 2.1em;
 }
 
 /*篩選條件延展*/
@@ -97,7 +97,7 @@ input[type="submit"] {
 
 /*篩選條件的字*/
 .p_select-font {
-  font-size: 2.2em;
+  font-size: 2.0em;
   color: white;
   margin: 1.2%
 }
@@ -133,13 +133,13 @@ input[type="submit"] {
 }
 
 #p_bank-option {
-  flex: 4;
+  flex: 3;
   margin: 1% 2% 0 3%;
 }
 
 /*要小修寬度跟箭頭方向*/
 #p_bank-option-content {
-  width: 60%;
+  width: 55%;
   height: 90%;
   border-radius: 22px;
   border-width: thick;
@@ -188,7 +188,87 @@ input[type="submit"] {
 .p_card_display {
   height: 19%;
   width: 100%;
-  background-color: grey;
+  background-color: #2B2D34;
+}
+
+.p_card_display_header_seperate {
+  height: 6%;
+  width: 100%;
+  display: flex;
+}
+
+.p_card_display_header {
+  height: 100%;
+  width: 90%;
+  font-size: 2em;
+  display: flex;
+  margin-right: 0px;
+}
+
+.p_card_display_header_style {
+  padding: 1% 2% 0 2%;
+  height: 60%;
+  margin: 2% 2% 0 2%;
+  border-radius: 2.1em;
+  background-color: #FFDD00;
+}
+
+.p_card_display_header_style_close {
+  height: 70%;
+  width: 10%;
+  font-size: 4.5em;
+  color: #F3F3F3;
+}
+
+.p_card_display_block {
+  background-color: #33363D;
+  height: 94%;
+}
+
+.p_card_list {
+  height: 100%;
+  width: 100%;
+}
+
+.p_card_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.p_card_list li {
+  margin: 7%;
+  width: 86%;
+  height: 45%;
+}
+
+.p_card_name {
+  height: 10%;
+  font-size: 2.2em;
+  color: white;
+  padding: 2%;
+  text-align: left;
+  margin-left: 7.5%;
+}
+
+.p_card_img {
+  width: 85%;
+  height: 60%;
+}
+
+.p_card_data {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  width: 85%;
+  height: 15%;
+  display: flex;
+}
+
+.p_card_data_style {
+  font-size: 2.2em;
+  color: white;
+  padding: 1%;
+  flex: 1;
 }
 
 /*置底共用*/

@@ -5,5 +5,11 @@ $("input[name *= 'select']").click(function() {
 
 $("input[name *= 'submit']").click(function() {
   $(".p_select-btn-extend").addClass("d-none");
-  $(".p_card_display").css("height", "100%");
+  $(".p_card_display").css({
+    "height": "91%",
+    "width": "95%",
+    "margin-left": "2.5%",
+    "border-radius": "2.2em",
+
+  });
 });
