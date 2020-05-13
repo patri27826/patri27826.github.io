@@ -149,10 +149,12 @@ input[type="submit"] {
   font-size: 1em;
   text-align: center;
   text-align-last: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .p_option_size {
-  font-size: 0.4em;
+  font-size: 1.2em;
 }
 
 /*選項*/
@@ -225,6 +227,7 @@ input[type="submit"] {
 .p_card_display_block {
   background-color: #33363D;
   height: 98%;
+  overflow: scroll;
 }
 
 .p_card_list {

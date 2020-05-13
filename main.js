@@ -112,11 +112,12 @@ $("#p_mastercard,#p_visa,#p_ae,#p_jcb").click(function() {
 
 function display() {
 
+  let bank = $("#p_bank-option-content").val();
   let aa = $.ajax({
     url: "card_data2.json",
     async: false
   });
-  $('#p_card_display').empty();
+  $('#p_list').empty();
   let c_data = aa.responseJSON;
 
 
@@ -131,80 +132,361 @@ function display() {
     let a = c_data.v_in[i].split("%", 5);
     let b = c_data.v_out[i].split("%", 5);
     let c = c_data.v_year[i].split("$", 5);
+    list[i] = 0;
     value_in[i] = a[0];
     value_out[i] = b[0];
     if (c[0] == "NT") value_year[i] = c[1];
     else value_year[i] = c[0];
   }
 
+  for (i = 0; i < c_data.name.length; i++) {
+    if (c_data.name[i].indexOf(bank) != -1) {
+      list[i] = 1;
+    }
+  }
+
+
+
   if (inn == "p_in_less1" && out == "p_out_less2" && year == "p_y_none") {
     for (i = 0; i < c_data.name.length; i++) {
-      if (value_in[i] < 1 && value_out[i] < 2 && (value_year == "首年無年費" || value_year == "0")) {
+      if (value_in[i] < 1 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
         let a = '<li>' +
           '<div class="p_card_name">' +
-          c_data.name + '</div>' +
-          '<img class="p_card_img" src="' + c_data.img + '">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
           '<div class="p_card_data">' +
           '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
           '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
           '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
           '</div>' +
           '</li>';
-        $(a).appendTo('#p_card_list');
+        $(a).appendTo('#p_list');
+
       }
 
     }
 
   } else if (inn == "p_in_less1" && out == "p_out_less2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] < 1 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_less1" && out == "p_out_less2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] < 1 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_less1" && out == "p_out_bigger2" && year == "p_y_none") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] < 1 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_less1" && out == "p_out_bigger2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] < 1 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
 
+      }
+    }
   } else if (inn == "p_in_less1" && out == "p_out_bigger2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] < 1 && value_out[i] >= 2 && value_year[i] >= 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_less2" && year == "p_y_none") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_less2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_less2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_bigger2" && year == "p_y_none") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_bigger2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger1" && out == "p_out_bigger2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 1 && value_out[i] >= 2 && value_year[i] > 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_less2" && year == "p_y_none") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_less2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_less2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_bigger2" && year == "p_y_none") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_bigger2" && year == "p_y_less3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   } else if (inn == "p_in_bigger25" && out == "p_out_bigger2" && year == "p_y_bigger3") {
+    for (i = 0; i < c_data.name.length; i++) {
+      if (value_in[i] >= 2.5 && value_out[i] >= 2 && value_year[i] >= 3000 && list[i] == 1) {
 
+        let a = '<li>' +
+          '<div class="p_card_name">' +
+          c_data.name[i] + '</div>' +
+          '<img class="p_card_img" src="' + c_data.img[i] + '">' +
+          '<div class="p_card_data">' +
+          '<span class="p_card_data_style">年費:' + value_year[i] + '</span>' +
+          '<span class="p_card_data_style">國內:' + value_in[i] + '%</span>' +
+          '<span class="p_card_data_style">國外:' + value_out[i] + '%</span>' +
+          '</div>' +
+          '</li>';
+        $(a).appendTo('#p_list');
+
+      }
+    }
 
   }
 
