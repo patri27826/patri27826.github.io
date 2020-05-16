@@ -22,12 +22,13 @@ $("input[name *= 'select']").click(function() {
 
 $("input[name *= 'submit']").click(function() {
   if (inn == -1 || out == -1 || year == -1) {
-    Swal.fire(
-      "查詢卡片失敗", //標題
-      "請輸入查詢條件", //訊息內容(可省略)
-      "warning" //圖示(可省略) success/info/warning/error/question
+    Swal.fire({
+      title: "查詢卡片失敗", //標題
+      html: "請輸入查詢條件", //訊息內容(可省略)
+      icon: "warning",
+      animation: false //圖示(可省略) success/info/warning/error/question
       //圖示範例：https://sweetalert2.github.io/#icons
-    );
+    });
   } else {
 
     $(".p_select-btn-extend").addClass("d-none");
