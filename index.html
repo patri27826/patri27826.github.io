@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -14,136 +14,159 @@
   <header>
     <img src="pic/ham.svg" alt="hamburger" id="ham">
   </header>
+  <!--側邊欄-->
+  <div class="p_wrapper">
+    <nav class="p_off" id="p_sidebar">
+      <div class="p_sidebar-header">
+        <h2>鄭致浩</h2>
+      </div>
+      <ul class="p_components">
+        <p>查看個人檔案</p>
+        <li>
+          <a herf="#">item1</a>
+        </li>
+        <li>
+          <a herf="#">item2</a>
+        </li>
+        <li>
+          <a herf="#">item3</a>
+        </li>
+        <li>
+          <a herf="#">item4</a>
+        </li>
+      </ul>
 
-  <!--p_ni最外面ㄉdiv-->
-  <div class=" pay_outlayer">
+    </nav>
 
-    <!--搜尋欄-->
-    <div class="p_search">
-      <input type="text" name="search">
-      <img src="pic/q.svg" class="p_q">
-    </div>
+    <!--p_ni最外面ㄉdiv-->
+    <div class=" pay_outlayer">
 
-
-
-    <div class="p_select-btn-show">
-      <input type="submit" name="select" value="+ 篩選條件">
-    </div>
-
-
-    <div class="p_select-btn-extend d-none">
-      <div class="p_select_detail">
-        <div class="p_select-font">+ 篩選條件</div>
-        <div class="p_select_detail2">
-          <div class="p_wrap-bank">
-            <span id="p_bank">發卡銀行</span>
-            <form id="p_bank-option">
-              <select size="3" id="p_bank-option-content" name="yourbank">
-                　<option class="p_option_size" value="玉山銀行">玉山銀行</option>
-                　<option class="p_option_size" value="國泰世華">國泰世華</option>
-                　<option class="p_option_size" value="永豐銀行">永豐銀行</option>
-                　<option class="p_option_size" value="花旗銀行">花旗銀行</option>
-                　<option class="p_option_size" value="滙豐銀行">滙豐銀行</option>
-                　<option class="p_option_size" value="渣打銀行">渣打銀行</option>
-                　<option class="p_option_size" value="中國信託">中國信託</option>
-                　<option class="p_option_size" value="台新銀行">台新銀行</option>
-                　<option class="p_option_size" value="台北富邦">台北富邦</option>
-                <option class="p_option_size" value="星展銀行">星展銀行</option>
-                <option class="p_option_size" value="王道銀行">王道銀行</option>
-                <option class="p_option_size" value="新光銀行">新光銀行</option>
-                <option class="p_option_size" value="聯邦銀行">聯邦銀行</option>
-                <option class="p_option_size" value="美國運通">美國運通</option>
-                <option class="p_option_size" value="遠東商銀">遠東商銀</option>
-                <option class="p_option_size" value="臺灣企銀">臺灣企銀</option>
-                <option class="p_option_size" value="彰化銀行">彰化銀行</option>
-                <option class="p_option_size" value="華泰銀行">華泰銀行</option>
-                <option class="p_option_size" value="華南銀行">華南銀行</option>
-                <option class="p_option_size" value="第一銀行">第一銀行</option>
-                <option class="p_option_size" value="高雄銀行">高雄銀行</option>
-                <option class="p_option_size" value="安泰銀行">安泰銀行</option>
-                <option class="p_option_size" value="合作金庫">合作金庫</option>
-                <option class="p_option_size" value="兆豐銀行">兆豐銀行</option>
-                <option class="p_option_size" value="凱基銀行">凱基銀行</option>
-                <option class="p_option_size" value="台灣樂天">台灣樂天</option>
-                <option class="p_option_size" value="臺灣銀行">臺灣銀行</option>
-                <option class="p_option_size" value="台中銀行">台中銀行</option>
-                <option class="p_option_size" value="日盛銀行">日盛銀行</option>
-                <option class="p_option_size" value="元大銀行">元大銀行</option>
-                <option class="p_option_size" value="土地銀行">土地銀行</option>
-                <option class="p_option_size" value="三信銀行">三信銀行</option>
-                <option class="p_option_size" value="上海商銀">上海商銀</option>
-                <option class="p_option_size" value="陽信銀行">陽信銀行</option>
+      <!--搜尋欄-->
+      <div class="p_search">
+        <input type="text" name="search">
+        <img src="pic/q.svg" class="p_q">
+      </div>
 
 
-                <!--                                    要加很多選項-->
-              </select>
-            </form>
+
+      <div class="p_select-btn-show">
+        <input type="submit" name="select" value="+ 篩選條件">
+      </div>
+
+
+      <div class="p_select-btn-extend d-none">
+        <div class="p_select_detail">
+          <div class="p_select-font">+ 篩選條件</div>
+          <div class="p_select_detail2">
+            <div class="p_wrap-bank d-none">
+              <span id="p_bank">發卡銀行</span>
+              <form id="p_bank-option">
+                <select size="3" id="p_bank-option-content" name="yourbank">
+                  　<option class="p_option_size" value="玉山銀行">玉山銀行</option>
+                  　<option class="p_option_size" value="國泰世華">國泰世華</option>
+                  　<option class="p_option_size" value="永豐銀行">永豐銀行</option>
+                  　<option class="p_option_size" value="花旗銀行">花旗銀行</option>
+                  　<option class="p_option_size" value="滙豐銀行">滙豐銀行</option>
+                  　<option class="p_option_size" value="渣打銀行">渣打銀行</option>
+                  　<option class="p_option_size" value="中國信託">中國信託</option>
+                  　<option class="p_option_size" value="台新銀行">台新銀行</option>
+                  　<option class="p_option_size" value="台北富邦">台北富邦</option>
+                  <option class="p_option_size" value="星展銀行">星展銀行</option>
+                  <option class="p_option_size" value="王道銀行">王道銀行</option>
+                  <option class="p_option_size" value="新光銀行">新光銀行</option>
+                  <option class="p_option_size" value="聯邦銀行">聯邦銀行</option>
+                  <option class="p_option_size" value="美國運通">美國運通</option>
+                  <option class="p_option_size" value="遠東商銀">遠東商銀</option>
+                  <option class="p_option_size" value="臺灣企銀">臺灣企銀</option>
+                  <option class="p_option_size" value="彰化銀行">彰化銀行</option>
+                  <option class="p_option_size" value="華泰銀行">華泰銀行</option>
+                  <option class="p_option_size" value="華南銀行">華南銀行</option>
+                  <option class="p_option_size" value="第一銀行">第一銀行</option>
+                  <option class="p_option_size" value="高雄銀行">高雄銀行</option>
+                  <option class="p_option_size" value="安泰銀行">安泰銀行</option>
+                  <option class="p_option_size" value="合作金庫">合作金庫</option>
+                  <option class="p_option_size" value="兆豐銀行">兆豐銀行</option>
+                  <option class="p_option_size" value="凱基銀行">凱基銀行</option>
+                  <option class="p_option_size" value="台灣樂天">台灣樂天</option>
+                  <option class="p_option_size" value="臺灣銀行">臺灣銀行</option>
+                  <option class="p_option_size" value="台中銀行">台中銀行</option>
+                  <option class="p_option_size" value="日盛銀行">日盛銀行</option>
+                  <option class="p_option_size" value="元大銀行">元大銀行</option>
+                  <option class="p_option_size" value="土地銀行">土地銀行</option>
+                  <option class="p_option_size" value="三信銀行">三信銀行</option>
+                  <option class="p_option_size" value="上海商銀">上海商銀</option>
+                  <option class="p_option_size" value="陽信銀行">陽信銀行</option>
+
+
+                  <!--                                    要加很多選項-->
+                </select>
+              </form>
+            </div>
+
+            <div class="p_equal p_underline">國內回饋</div>
+            <div class="p_equal">
+              <span class="text-size p_border_style" id="p_in_less1"> &lt 1.00% </span>
+              <span class="text-size p_border_style" id="p_in_bigger1"> &gt 1.00% </span>
+              <span class="text-size p_border_style" id="p_in_bigger25"> &gt 2.50% </span>
+            </div>
+
+            <div class="p_equal p_underline">國外回饋</div>
+            <div class="p_equal">
+              <span class="text-size p_border_style" id="p_out_less2"> &lt 2.00% </span>
+              <span class="p_border_style" id="p_out_bigger2"> &gt 2.00% </span>
+            </div>
+
+            <div class="p_equal p_underline">年費</div>
+            <div class="p_equal">
+              <span class="text-size p_border_style" id="p_y_none"> NTD 0 </span>
+              <span class="text-size p_border_style" id="p_y_less3"> &lt NTD 3000 </span>
+              <span class="p_border_style" id="p_y_bigger3"> &gt NTD 3000 </span>
+            </div>
+
+            <div class="p_equal p_underline">國際組織</div>
+            <div class="p_equal">
+              <span class="text-size p_border_style" id="p_mastercard"> Mastercard </span>
+              <span class="text-size p_border_style" id="p_visa"> VISA </span>
+              <span class="text-size p_border_style" id="p_ae"> AE </span>
+              <span class="p_border_style" id="p_jcb"> JCB </span>
+            </div>
+
+            <div class="p_equal">
+              <input class="submit-size" name="submit" type="submit" value="搜尋" style="margin-left:22%;color:black;background-color:#FFDD00;font-weight:bold;">
+              <input class="submit-size" type="submit" value="取消">
+            </div>
+
+
           </div>
-
-          <div class="p_equal p_underline">國內回饋</div>
-          <div class="p_equal">
-            <span class="text-size p_border_style" id="p_in_less1"> &lt 1.00% </span>
-            <span class="text-size p_border_style" id="p_in_bigger1"> &gt 1.00% </span>
-            <span class="text-size p_border_style" id="p_in_bigger25"> &gt 2.50% </span>
-          </div>
-
-          <div class="p_equal p_underline">國外回饋</div>
-          <div class="p_equal">
-            <span class="text-size p_border_style" id="p_out_less2"> &lt 2.00% </span>
-            <span class="p_border_style" id="p_out_bigger2"> &gt 2.00% </span>
-          </div>
-
-          <div class="p_equal p_underline">年費</div>
-          <div class="p_equal">
-            <span class="text-size p_border_style" id="p_y_none"> NTD 0 </span>
-            <span class="text-size p_border_style" id="p_y_less3"> &lt NTD 3000 </span>
-            <span class="p_border_style" id="p_y_bigger3"> &gt NTD 3000 </span>
-          </div>
-
-          <div class="p_equal p_underline">國際組織</div>
-          <div class="p_equal">
-            <span class="text-size p_border_style" id="p_mastercard"> Mastercard </span>
-            <span class="text-size p_border_style" id="p_visa"> VISA </span>
-            <span class="text-size p_border_style" id="p_ae"> AE </span>
-            <span class="p_border_style" id="p_jcb"> JCB </span>
-          </div>
-
-          <div class="p_equal">
-            <input class="submit-size" name="submit" type="submit" value="搜尋" style="margin-left:22%;color:black;background-color:#FFDD00;font-weight:bold;">
-            <input class="submit-size" type="submit" value="取消">
-          </div>
+        </div>
+      </div>
 
 
+
+
+
+      <div class="p_card_display d-none">
+        <div class="p_card_display_header_seperate">
+          <span class="p_card_display_header">
+            <span class="p_card_display_header_style">百貨購物</span>
+            <span class="p_card_display_header_style">VISA</span>
+
+          </span>
+          <span class="p_card_display_header_style_close" id="p_close">×</span>
+        </div>
+
+        <div class="p_card_display_block">
+          <ul class="p_card_list" id="p_list">
+
+            <!-- 卡片內容 -->
+
+          </ul>
         </div>
       </div>
     </div>
 
 
-
-
-
-    <div class="p_card_display d-none">
-      <div class="p_card_display_header_seperate">
-        <span class="p_card_display_header">
-          <span class="p_card_display_header_style">百貨購物</span>
-          <span class="p_card_display_header_style">VISA</span>
-
-        </span>
-        <span class="p_card_display_header_style_close">×</span>
-      </div>
-
-      <div class="p_card_display_block">
-        <ul class="p_card_list" id="p_list">
-
-          <!-- 卡片內容 -->
-
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,19 @@
-let inn;
-let out;
-let year;
+let inn = -1;
+let out = -1;
+let year = -1;
 
 
+$("#ham").click(function() {
+  if ($("#p_sidebar").hasClass("p_off") == 1) {
+    $("#p_sidebar").addClass("p_show");
+    $("#p_sidebar").removeClass("p_off");
+  } else {
+    if ($("#p_sidebar").hasClass("p_off") == 0) {
+      $("#p_sidebar").addClass("p_off");
+      $("#p_sidebar").removeClass("p_show");
+    }
+  }
+});
 
 $("input[name *= 'select']").click(function() {
   $(".p_select-btn-show").addClass("d-none");
@@ -10,16 +21,26 @@ $("input[name *= 'select']").click(function() {
 });
 
 $("input[name *= 'submit']").click(function() {
-  $(".p_select-btn-extend").addClass("d-none");
-  $(".p_card_display").css({
-    "height": "91%",
-    "width": "95%",
-    "margin-left": "2.5%",
-    "border-radius": "2.2em",
+  if (inn == -1 || out == -1 || year == -1) {
+    Swal.fire(
+      "查詢卡片失敗", //標題
+      "請輸入查詢條件", //訊息內容(可省略)
+      "warning" //圖示(可省略) success/info/warning/error/question
+      //圖示範例：https://sweetalert2.github.io/#icons
+    );
+  } else {
 
-  });
-  $(".p_card_display").removeClass("d-none");
-  display();
+    $(".p_select-btn-extend").addClass("d-none");
+    $(".p_card_display").css({
+      "height": "91%",
+      "width": "95%",
+      "margin-left": "2.5%",
+      "border-radius": "2.2em",
+
+    });
+    $(".p_card_display").removeClass("d-none");
+    display();
+  }
 });
 
 $("#p_in_less1,#p_in_bigger1,#p_in_bigger25").click(function() {
@@ -110,6 +131,22 @@ $("#p_mastercard,#p_visa,#p_ae,#p_jcb").click(function() {
   // else in_check = 1;
 });
 
+$("#p_close").click(function() {
+
+  $(".p_card_display").addClass("d-none");
+  $(".p_select-btn-show").removeClass("d-none");
+  $("#p_in_less1,#p_in_bigger1,#p_in_bigger25,#p_out_less2,#p_out_bigger2,#p_y_none, #p_y_less3, #p_y_bigger3, #p_mastercard, #p_visa, #p_ae, #p_jcb ").css({
+    "background-color": "#2B2D34",
+    "color": "white"
+  });
+  inn = -1;
+  out = -1;
+  year = -1;
+
+
+
+});
+
 function display() {
 
   let bank = $("#p_bank-option-content").val();
@@ -140,9 +177,9 @@ function display() {
   }
 
   for (i = 0; i < c_data.name.length; i++) {
-    if (c_data.name[i].indexOf(bank) != -1) {
-      list[i] = 1;
-    }
+
+    list[i] = 1;
+
   }
 
 
@@ -150,7 +187,7 @@ function display() {
   if (inn == "p_in_less1" && out == "p_out_less2" && year == "p_y_none") {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -170,7 +207,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -189,7 +226,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -208,7 +245,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -219,15 +256,13 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
-
       }
     }
 
   } else if (inn == "p_in_less1" && out == "p_out_bigger2" && year == "p_y_less3") {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
-
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -245,7 +280,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] < 1 && value_out[i] >= 2 && value_year[i] >= 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -256,7 +291,6 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
-
       }
     }
 
@@ -264,7 +298,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -282,8 +316,7 @@ function display() {
   } else if (inn == "p_in_bigger1" && out == "p_out_less2" && year == "p_y_less3") {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
-
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -294,7 +327,6 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
-
       }
     }
 
@@ -302,7 +334,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -321,7 +353,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -340,7 +372,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -359,7 +391,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 1 && value_out[i] >= 2 && value_year[i] > 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -378,7 +410,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] < 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -389,7 +421,6 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
-
       }
     }
 
@@ -397,7 +428,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] < 2 && value_year[i] < 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -416,7 +447,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] < 2 && value_year[i] >= 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -435,7 +466,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] >= 2 && (value_year[i] == "首年無年費" || value_year[i] == "0") && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -454,7 +485,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] >= 2 && value_year[i] < 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -473,7 +504,7 @@ function display() {
     for (i = 0; i < c_data.name.length; i++) {
       if (value_in[i] >= 2.5 && value_out[i] >= 2 && value_year[i] >= 3000 && list[i] == 1) {
 
-        let a = '<li>' +
+        let a = '<li class="p_card" id=p_' + parseInt(i, 10) + '>' +
           '<div class="p_card_name">' +
           c_data.name[i] + '</div>' +
           '<img class="p_card_img" src="' + c_data.img[i] + '">' +
@@ -484,11 +515,26 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
-
       }
     }
 
   }
+  $(".p_card").click(function() {
+    let id = $(this).attr("id");
+    a = id.split("_", 3);
+    id = a[1];
+    $(".p_card_list").addClass("d-none");
+    $(".p_card_display_header_style").addClass("d-none");
+    $(".p_card_display_header").html(c_data.name[id]).css({
+      "text-align": "center",
+      "color": "white",
+      "margin": "2% 0 0% 11%",
+      "display": "inline"
+
+    });
+
+
+  });
 
 
 
