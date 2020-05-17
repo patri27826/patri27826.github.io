@@ -31,14 +31,18 @@ header {
 
 /* 側邊欄 */
 .p_wrapper {
-  display: flex;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 93.5%;
   align-items: stretch;
 }
 
 .p_off {
-  display: none;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: cadetblue;
+  opacity: 0.8;
 }
 
 #p_sidebar {
@@ -47,7 +51,9 @@ header {
 }
 
 .p_show {
+  position: absolute;
   width: 50%;
+  height: 100%;
   background-color: cadetblue;
   opacity: 0.8;
 }

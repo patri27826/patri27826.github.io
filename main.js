@@ -5,11 +5,15 @@ let head_html;
 
 $("#ham").click(function() {
   if ($("#p_sidebar").hasClass("p_off") == 1) {
-    $("#p_sidebar").addClass("p_show");
+    $("#p_sidebar").addClass("p_show").animate({
+      left: "0"
+    });
     $("#p_sidebar").removeClass("p_off");
   } else {
     if ($("#p_sidebar").hasClass("p_off") == 0) {
-      $("#p_sidebar").addClass("p_off");
+      $("#p_sidebar").addClass("p_off").animate({
+        left: "-50%"
+      });
       $("#p_sidebar").removeClass("p_show");
     }
   }
