@@ -1,7 +1,7 @@
 let inn = -1;
 let out = -1;
 let year = -1;
-
+let head_html;
 
 $("#ham").click(function() {
   if ($("#p_sidebar").hasClass("p_off") == 1) {
@@ -143,12 +143,20 @@ $("#p_close").click(function() {
   inn = -1;
   out = -1;
   year = -1;
-
+  $(".p_card_list").empty().removeClass("d-none");
+  $(".p_card_detail").empty().addClass("d-none");
+  $(".p_card_display_header").empty().removeAttr("style");
 
 
 });
 
+
+
+
+
 function display() {
+
+
 
   let bank = $("#p_bank-option-content").val();
   let aa = $.ajax({
@@ -157,6 +165,7 @@ function display() {
   });
   $('#p_list').empty();
   let c_data = aa.responseJSON;
+
 
 
   let count = new Array(c_data.name.length);
@@ -182,8 +191,25 @@ function display() {
     list[i] = 1;
 
   }
+  let h_a;
+  let h_b;
+  let h_c;
+  if (inn == "p_in_less1") h_a = "國內<1%";
+  else if (inn == "p_in_bigger1") h_a = "國內>1%";
+  else if (inn == "p_in_bigger25") h_a = '國內>2.5%';
 
+  if (out == "p_out_less2") h_b = '國內<2%';
+  else if (out == "p_out_bigger2") h_b = '國內>2%';
 
+  if (year == "p_y_none") h_c = '無年費';
+  else if (year == "p_y_less3") h_c = '年費<3K';
+  else if (year == "p_y_bigger3") h_c = '年費>3K';
+
+  let head = '<span class="p_card_display_header_style">' + h_a + '</span>' +
+    '<span class="p_card_display_header_style">' + h_b + '</span>' +
+    '<span class="p_card_display_header_style">' + h_c + '</span>';
+  $('.p_card_display_header').empty();
+  $(head).appendTo('.p_card_display_header');
 
   if (inn == "p_in_less1" && out == "p_out_less2" && year == "p_y_none") {
     for (i = 0; i < c_data.name.length; i++) {
@@ -520,25 +546,50 @@ function display() {
     }
 
   }
+
+
   $(".p_card").click(function() {
+
+
     let id = $(this).attr("id");
     a = id.split("_", 3);
     id = a[1];
     $(".p_card_list").addClass("d-none");
-    $(".p_card_display_header_style").addClass("d-none");
+    head_html = $(".p_card_display_header").html();
+    console.log(head_html);
+
     $(".p_card_display_header").html(c_data.name[id]).css({
       "text-align": "center",
       "color": "white",
       "margin": "2% 0 0% 11%",
       "display": "inline"
-
     });
-
-
+    $(".p_card_detail").removeClass("d-none");
+    let html = '<div class="p_card_page_back">' +
+      '<img class="p_card_page_back_icon" style="margin-left:3%;width:10%" src="https://img.icons8.com/doodle/96/000000/return--v1.png" />' +
+      '</div>' +
+      '<img class="p_card_detail_img" src="' + c_data.img[id] + '">' +
+      '<div class="p_card_detail_data">' +
+      '<div style="height:5%;width:100%;padding:3% 0 3% 0;font-size:2.2em;color:white;font-weight:bold">卡片資訊' +
+      '</div>' +
+      '<div style="width:95%;margin:0 2.5% 0 2.5%;height:70%;font-weight:bold;font-size:1.8em;color:white;line-height:2em">1. 所有海外實體交易、海外網購、餐飲皆享6倍回饋，約2.4%紅利 回饋100點紅利折抵10元帳單金額，最高享13倍紅利等同5.2%回饋 2. 指定航空購票10%現金回饋台灣虎航、酷航、香草、樂桃、捷星 、亞洲航空，正附卡合併計算，活動期間歸戶每季回饋上限2,000元 3. 每5,000點紅利點數可兌換2,000「亞洲萬里通」里數，每次兌換需 以5,000 點紅利為單位。活動期間:2020/01/01~2020/06/30。' +
+      '</div>' +
+      '<div style="height:15%";width:100%;background-color:grey;>' +
+      '<span style="font-size:2.2em;font-weight:bold;color:white;padding:0 5% 2% 5%;margin:2% 0 0 0">匯入錢包</span>' +
+      '<span style="font-size:2.2em;font-weight:bold;color:white;padding:0 5% 2% 5%;margin:2% 0 0 0">加入收藏</span>' +
+      '</div>' +
+      '</div>'
+    $(html).appendTo('.p_card_detail');
   });
 
 
-
-
-
 }
+
+$(".p_card_detail").on("click", '.p_card_page_back_icon', function() {
+
+  $(".p_card_detail").empty().addClass("d-none");
+  $(".p_card_display_header").empty().html(head_html).removeAttr("style");
+  $(".p_card_list").removeClass("d-none");
+
+
+});

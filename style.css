@@ -49,6 +49,7 @@ header {
 .p_show {
   width: 50%;
   background-color: cadetblue;
+  opacity: 0.8;
 }
 
 .p_sidebar-header {
@@ -281,6 +282,8 @@ input[type="submit"] {
   color: #F3F3F3;
 }
 
+.p_card {}
+
 .p_card_display_block {
   background-color: #33363D;
   height: 98%;
@@ -318,12 +321,40 @@ input[type="submit"] {
   height: 60%;
 }
 
+.p_card_page_back {
+  width: 100%;
+  height: 7%;
+  display: flex;
+}
+
+.p_card_detail_img {
+  width: 50%;
+  height: 20%;
+  margin: 0% 25% 2% 25%;
+}
+
+.p_card_detail_data {
+  width: 95%;
+  height: 70%;
+  margin: 0% 2.5% 3% 2.5%;
+  background-color: #515151;
+  border-radius: 2em;
+}
+
 .p_card_data {
-  margin-left: 7.5%;
-  margin-right: 7.5%;
-  width: 85%;
+  margin: 0 5% 0 5%;
+  width: 90%;
   height: 15%;
   display: flex;
+  background: -webkit-linear-gradient(90deg, rgb(39, 40, 43), rgb(120, 121, 125));
+  background: linear-gradient(180deg, rgb(39, 40, 43), rgb(120, 121, 125));
+  background-size: cover;
+  border-radius: 1em;
+}
+
+.p_card_detail {
+  width: 100%;
+  height: 100%;
 }
 
 .p_card_data_style {
@@ -331,6 +362,7 @@ input[type="submit"] {
   color: white;
   padding: 1%;
   flex: 1;
+  margin-top: 2%;
 }
 
 /*置底共用*/
