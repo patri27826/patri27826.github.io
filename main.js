@@ -569,20 +569,27 @@ function display() {
       "display": "inline"
     });
     $(".p_card_detail").removeClass("d-none");
-    let html = '<div class="p_card_page_back">' +
-      '<img class="p_card_page_back_icon" style="margin-left:3%;width:10%" src="https://img.icons8.com/doodle/96/000000/return--v1.png" />' +
-      '</div>' +
-      '<img class="p_card_detail_img" src="' + c_data.img[id] + '">' +
-      '<div class="p_card_detail_data">' +
-      '<div style="height:5%;width:100%;padding:3% 0 3% 0;font-size:2.2em;color:white;font-weight:bold">卡片資訊' +
-      '</div>' +
-      '<div style="width:95%;margin:0 2.5% 0 2.5%;height:70%;font-weight:bold;font-size:1.8em;color:white;line-height:2em">1. 所有海外實體交易、海外網購、餐飲皆享6倍回饋，約2.4%紅利 回饋100點紅利折抵10元帳單金額，最高享13倍紅利等同5.2%回饋 2. 指定航空購票10%現金回饋台灣虎航、酷航、香草、樂桃、捷星 、亞洲航空，正附卡合併計算，活動期間歸戶每季回饋上限2,000元 3. 每5,000點紅利點數可兌換2,000「亞洲萬里通」里數，每次兌換需 以5,000 點紅利為單位。活動期間:2020/01/01~2020/06/30。' +
-      '</div>' +
-      '<div style="height:15%";width:100%;background-color:grey;>' +
-      '<span style="font-size:2.2em;font-weight:bold;color:white;padding:0 5% 2% 5%;margin:2% 0 0 0">匯入錢包</span>' +
-      '<span style="font-size:2.2em;font-weight:bold;color:white;padding:0 5% 2% 5%;margin:2% 0 0 0">加入收藏</span>' +
-      '</div>' +
-      '</div>'
+    let html =
+      '<div class="p_card_page_back">' +
+      '  <img class="p_card_page_back_icon" style="margin-left:3%;width:10%" src="https://img.icons8.com/doodle/96/000000/return--v1.png" />' +
+      '  </div><img class="p_card_detail_img" src="">' +
+
+
+      '<div class = "p_card_detail_data">' +
+      '<div style = "height:7%;width:95%;margin: 0 2.5% 0 2.5%;display:flex;flex-direction:row;padding:2em 0 0 0;" >' +
+      '<span class = "p_data_btn_1"style = "border-radius: 1em;background-color:#F3F3F3;flex:1;padding:0.8% 1% 2% 1%;font-family:Segoe UI;font-size:2.2em;font-weight:bold" >' +
+      '優惠訊息 </span> <span class = "p_data_btn_2"style = "flex:1;padding:0.8% 1% 2% 1%;font-family:Segoe UI;font-size:2.2em;color:white;font-weight:bold" > 申辦條件' +
+      '</span> <span class = "p_data_btn_3"style = "flex:1;padding:0.8% 1% 2% 1%;font-family:Segoe UI;font-size:2.2em;color:white;font-weight:bold" > 卡片相關 ' +
+      '</span> </div > <div style = "width:95%;margin:3% 2.5% 0 2.5%;height:70%;" >' +
+      ' <div class = "p_data_1" style = "width:100%;height:100%;overflow-y:scroll;font-family:Segoe UI;font-weight:bold;font-size:1.8em;color:white;line-height:2em" >' +
+      '</div> <div class = "p_data_2 d-none"' +
+      'style = "width:100%;height:100%;overflow-y:scroll; background-color:grey;font-family:Segoe UI;font-weight:bold;font-size:1.8em;color:white;line-height:2em" >' +
+      '</div> <div class = "p_data_3 d-none"' +
+      'style = "width:100%;height:100%;overflow-y:scroll; background-color:grey;font-family:Segoe UI;font-weight:bold;font-size:1.8em;color:white;line-height:2em" >' +
+      '</div></div><div style = "height:15%;width:100%y;margin-top:1em;" > ' +
+      '<span style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" >' + '匯入錢包 </span>' +
+      '<span style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" > 加入收藏 </span>' +
+      '</div > </div>';
     $(html).appendTo('.p_card_detail');
   });
 

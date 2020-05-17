@@ -41,8 +41,7 @@ header {
   position: absolute;
   width: 50%;
   height: 100%;
-  background-color: cadetblue;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #p_sidebar {
@@ -54,8 +53,7 @@ header {
   position: absolute;
   width: 50%;
   height: 100%;
-  background-color: cadetblue;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .p_sidebar-header {
@@ -71,6 +69,11 @@ header {
   font-size: 2.5em;
   letter-spacing: 0.25em;
   z-index: 3;
+  font-family: Segoe UI;
+}
+
+p {
+  font-family: Segoe UI;
 }
 
 ul, li {
@@ -78,6 +81,7 @@ ul, li {
   padding: 0;
   margin: 0;
   cursor: pointer;
+  font-family: Segoe UI;
 }
 
 li {
@@ -114,6 +118,7 @@ input[type="text"] {
   border-width: 2px;
   background-color: #f3f3f3;
   font-size: 2.3em;
+  font-family: Segoe UI;
 }
 
 /*放大鏡*/
@@ -127,6 +132,7 @@ input[type="text"] {
 /*篩選條件*/
 .p_select-btn-show {
   height: 6%;
+  font-family: Segoe UI;
 }
 
 input[type="submit"] {
@@ -138,6 +144,7 @@ input[type="submit"] {
   width: 26%;
   height: 80%;
   font-size: 2.1em;
+  font-family: Segoe UI;
 }
 
 /*篩選條件延展*/
@@ -162,7 +169,8 @@ input[type="submit"] {
 .p_select-font {
   font-size: 2.0em;
   color: white;
-  margin: 1.2%
+  margin: 1.2%;
+  font-family: Segoe UI;
 }
 
 /*大方格內漸層框框*/
@@ -193,6 +201,7 @@ input[type="submit"] {
 #p_bank {
   flex: 1;
   margin: 2% 2% 0 3%;
+  font-family: Segoe UI;
 }
 
 #p_bank-option {
@@ -218,6 +227,7 @@ input[type="submit"] {
 
 .p_option_size {
   font-size: 1.2em;
+  font-family: Segoe UI;
 }
 
 /*選項*/
@@ -225,6 +235,7 @@ input[type="submit"] {
   flex: 1;
   width: 100%;
   margin: 2% 2% 0 3%;
+  font-family: Segoe UI;
 }
 
 .p_border_style {
@@ -232,6 +243,7 @@ input[type="submit"] {
   border-radius: 25px;
   border-color: #FFDD00;
   padding: 9px;
+  font-family: Segoe UI;
 }
 
 .p_underline {
@@ -240,6 +252,7 @@ input[type="submit"] {
 
 .text-size {
   margin: 0 3% 0 0;
+  font-family: Segoe UI;
 }
 
 .submit-size {
@@ -279,6 +292,7 @@ input[type="submit"] {
   border-radius: 2.1em;
   background-color: #FFDD00;
   width: 20%;
+  font-family: Segoe UI;
 }
 
 .p_card_display_header_style_close {
@@ -288,7 +302,9 @@ input[type="submit"] {
   color: #F3F3F3;
 }
 
-.p_card {}
+.p_card {
+  font-family: Segoe UI;
+}
 
 .p_card_display_block {
   background-color: #33363D;
@@ -320,6 +336,7 @@ input[type="submit"] {
   padding: 2%;
   text-align: left;
   margin-left: 7.5%;
+  font-family: Segoe UI;
 }
 
 .p_card_img {
@@ -369,6 +386,7 @@ input[type="submit"] {
   padding: 1%;
   flex: 1;
   margin-top: 2%;
+  font-family: Segoe UI;
 }
 
 /*置底共用*/
