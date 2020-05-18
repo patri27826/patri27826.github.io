@@ -4,12 +4,24 @@ let year = -1;
 let bank = -1;
 let head_html;
 let search = 0;
+let hot_card = 0;
+$(".p_hot_card_select").click(function() {
+  if (hot_card == 0) {
+    $(".p_hot_card").animate({
+      top: "14%",
+    });
+    hot_card = 1;
 
-$(".p_hot_card").click(function() {
-  $(this).animate({
-    top: "14%"
-  });
 
+
+
+  } else {
+    $(".p_hot_card").animate({
+      top: "89%"
+    });
+    hot_card = 0;
+
+  }
 
 
 });
@@ -50,7 +62,7 @@ $("input[name *= 'submit']").click(function() {
       //圖示範例：https://sweetalert2.github.io/#icons
     });
   } else {
-
+    $(".p_hot_card").addClass("d-none");
     $(".p_select-btn-extend").addClass("d-none");
     $(".p_card_display").css({
       "height": "91%",
@@ -154,7 +166,7 @@ $("#p_mastercard,#p_visa,#p_ae,#p_jcb").click(function() {
 });
 
 $("#p_close").click(function() {
-
+  $(".p_hot_card").removeClass("d-none");
   $(".p_card_display").addClass("d-none");
   $(".p_select-btn-show").removeClass("d-none");
   $("#p_in_less1,#p_in_bigger1,#p_in_bigger25,#p_out_less2,#p_out_bigger2,#p_y_none, #p_y_less3, #p_y_bigger3, #p_mastercard, #p_visa, #p_ae, #p_jcb ").css({
@@ -612,6 +624,7 @@ function display() {
           '</div>' +
           '</li>';
         $(a).appendTo('#p_list');
+        console.log(a);
       }
     }
   }
