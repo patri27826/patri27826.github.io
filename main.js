@@ -5,6 +5,15 @@ let bank = -1;
 let head_html;
 let search = 0;
 
+$(".p_hot_card").click(function() {
+  $(this).animate({
+    top: "14%"
+  });
+
+
+
+});
+
 $("#ham").click(function() {
   if ($("#p_sidebar").hasClass("p_off") == 1) {
     $("#p_sidebar").addClass("p_show").animate({

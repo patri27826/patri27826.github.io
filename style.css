@@ -135,6 +135,28 @@ input[type="text"] {
   font-family: Segoe UI;
 }
 
+.p_hot_card {
+  top: 89%;
+  position: absolute;
+  margin-top: 3%;
+  height: 86%;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.p_hot_card_header {
+  width: 100%;
+  height: 3%;
+  background-color: #2B2D34;
+  border-radius: 2em;
+  font-size: 1.6em;
+  color: white;
+  text-align: center;
+  font-family: Segoe UI;
+  font-weight: bold;
+  padding: 0 0 0 0;
+}
+
 input[type="submit"] {
   margin-top: 0.5%;
   border-radius: 0.8em;
