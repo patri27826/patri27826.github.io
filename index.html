@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" style="height:100%">
+<html lang="en" dir="ltr" style="height:100%;width:100%;">
 <meta name=" viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 
 <head>
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header id="p_r_header">
+  <header>
     <img src="pic/ham.svg" alt="hamburger" id="ham">
   </header>
 
@@ -25,178 +25,178 @@
       <ul class="p_components">
 
         <li>
-          <a herf="#">個人檔案</a>
+          <h4 herf="#">個人檔案</h4>
         </li>
         <li>
-          <a herf="#">我的卡片</a>
+          <h4 herf="#">我的卡片</h4>
         </li>
         <li>
-          <a herf="#">查詢卡片</a>
+          <h4 herf="#">查詢卡片</h4>
         </li>
         <li>
-          <a herf="#">最新資訊</a>
+          <h4 herf="#">最新資訊</h4>
         </li>
       </ul>
 
     </nav>
+  </div>
+  <!--p_ni最外面ㄉdiv-->
+  <div class=" pay_outlayer">
 
-    <!--p_ni最外面ㄉdiv-->
-    <div class=" pay_outlayer">
+    <!--搜尋欄-->
+    <div class="p_search">
+      <input type="text" name="search" id="p_search_text">
+      <img src="pic/q.svg" class="p_q">
+    </div>
 
-      <!--搜尋欄-->
-      <div class="p_search">
-        <input type="text" name="search" id="p_search_text">
-        <img src="pic/q.svg" class="p_q">
+
+
+    <div class="p_select-btn-show">
+      <input type="submit" name="select" value="+ 篩選條件">
+    </div>
+    <div class="p_hot_card">
+      <img class="p_hot_card_select" src="pic/arrow.svg" alt="" style="width:4%">
+      <div class="p_hot_card_header p_hot_card_select">
+        本月五大熱門卡片
       </div>
+      <ul class="p_hot_card_list">
+        <li class="p_card" id=p_8>
+          <div class="p_card_name">玉山銀行 Pi 拍錢包信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt14c79531e539d290/5c66732fab181759419c7ca0/ESUN0024.png?width=178&height=112&auto=webp">
+          <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:2%</span><span class="p_card_data_style">國外:3%</span></div>
+        </li>
+        <li class="p_card" id=p_20>
+          <div class="p_card_name">玉山銀行 玉山 Pi 拍兔 Debit 卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt4556814829dcedb7/5e001f1c7651f865a36d97b5/pidebit230x144.png?width=178&height=112&auto=webp">
+          <div class="p_card_data"><span class="p_card_data_style">年費:0</span><span class="p_card_data_style">國內:2.5%</span><span class="p_card_data_style">國外:2.5%</span></div>
+        </li>
+        <li class="p_card" id=p_64>
+          <div class="p_card_name">玉山銀行 雙幣信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blta1c90ac9101a767c/5c66732fc7b669b241760396/ESUN0025.png?width=178&height=112&auto=webp">
+          <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:0.6%</span><span class="p_card_data_style">國外:1.5%</span></div>
+        </li>
+        <li class="p_card" id=p_77>
+          <div class="p_card_name">玉山銀行 U Bear信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/bltf5c12f260b7e3654/5d6387f10c0c016ead6d9f89/C_250x157Y.png?width=178&height=112&auto=webp">
+          <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:1%</span><span class="p_card_data_style">國外:1%</span></div>
+        </li>
+        <li class="p_card" id=p_88>
+          <div class="p_card_name">玉山銀行 漢神巨蛋聯名卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt055269f2999f75e9/5d6f50596e51e63c133bef4c/HS_230x144.png?width=178&height=112&auto=webp">
+          <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:0.3%</span><span class="p_card_data_style">國外:1%</span></div>
+        </li>
+        <!-- 卡片內容 -->
+
+      </ul>
+    </div>
+
+    <div class="p_select-btn-extend d-none">
+      <div class="p_select_detail">
+        <div class="p_select-font">+ 篩選條件</div>
+        <div class="p_select_detail2">
+          <div class="p_wrap-bank d-none">
+            <span id="p_bank">發卡銀行</span>
+            <form id="p_bank-option">
+              <select size="3" id="p_bank-option-content" name="yourbank">
+                　<option class="p_option_size" value="玉山銀行">玉山銀行</option>
+                　<option class="p_option_size" value="國泰世華">國泰世華</option>
+                　<option class="p_option_size" value="永豐銀行">永豐銀行</option>
+                　<option class="p_option_size" value="花旗銀行">花旗銀行</option>
+                　<option class="p_option_size" value="滙豐銀行">滙豐銀行</option>
+                　<option class="p_option_size" value="渣打銀行">渣打銀行</option>
+                　<option class="p_option_size" value="中國信託">中國信託</option>
+                　<option class="p_option_size" value="台新銀行">台新銀行</option>
+                　<option class="p_option_size" value="台北富邦">台北富邦</option>
+                <option class="p_option_size" value="星展銀行">星展銀行</option>
+                <option class="p_option_size" value="王道銀行">王道銀行</option>
+                <option class="p_option_size" value="新光銀行">新光銀行</option>
+                <option class="p_option_size" value="聯邦銀行">聯邦銀行</option>
+                <option class="p_option_size" value="美國運通">美國運通</option>
+                <option class="p_option_size" value="遠東商銀">遠東商銀</option>
+                <option class="p_option_size" value="臺灣企銀">臺灣企銀</option>
+                <option class="p_option_size" value="彰化銀行">彰化銀行</option>
+                <option class="p_option_size" value="華泰銀行">華泰銀行</option>
+                <option class="p_option_size" value="華南銀行">華南銀行</option>
+                <option class="p_option_size" value="第一銀行">第一銀行</option>
+                <option class="p_option_size" value="高雄銀行">高雄銀行</option>
+                <option class="p_option_size" value="安泰銀行">安泰銀行</option>
+                <option class="p_option_size" value="合作金庫">合作金庫</option>
+                <option class="p_option_size" value="兆豐銀行">兆豐銀行</option>
+                <option class="p_option_size" value="凱基銀行">凱基銀行</option>
+                <option class="p_option_size" value="台灣樂天">台灣樂天</option>
+                <option class="p_option_size" value="臺灣銀行">臺灣銀行</option>
+                <option class="p_option_size" value="台中銀行">台中銀行</option>
+                <option class="p_option_size" value="日盛銀行">日盛銀行</option>
+                <option class="p_option_size" value="元大銀行">元大銀行</option>
+                <option class="p_option_size" value="土地銀行">土地銀行</option>
+                <option class="p_option_size" value="三信銀行">三信銀行</option>
+                <option class="p_option_size" value="上海商銀">上海商銀</option>
+                <option class="p_option_size" value="陽信銀行">陽信銀行</option>
 
 
-
-      <div class="p_select-btn-show">
-        <input type="submit" name="select" value="+ 篩選條件">
-      </div>
-      <div class="p_hot_card">
-        <img class="p_hot_card_select" src="pic/arrow.svg" alt="" style="width:4%">
-        <div class="p_hot_card_header p_hot_card_select">
-          本月五大熱門卡片
-        </div>
-        <ul class="p_hot_card_list">
-          <li class="p_card" id=p_8>
-            <div class="p_card_name">玉山銀行 Pi 拍錢包信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt14c79531e539d290/5c66732fab181759419c7ca0/ESUN0024.png?width=178&height=112&auto=webp">
-            <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:2%</span><span class="p_card_data_style">國外:3%</span></div>
-          </li>
-          <li class="p_card" id=p_20>
-            <div class="p_card_name">玉山銀行 玉山 Pi 拍兔 Debit 卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt4556814829dcedb7/5e001f1c7651f865a36d97b5/pidebit230x144.png?width=178&height=112&auto=webp">
-            <div class="p_card_data"><span class="p_card_data_style">年費:0</span><span class="p_card_data_style">國內:2.5%</span><span class="p_card_data_style">國外:2.5%</span></div>
-          </li>
-          <li class="p_card" id=p_64>
-            <div class="p_card_name">玉山銀行 雙幣信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blta1c90ac9101a767c/5c66732fc7b669b241760396/ESUN0025.png?width=178&height=112&auto=webp">
-            <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:0.6%</span><span class="p_card_data_style">國外:1.5%</span></div>
-          </li>
-          <li class="p_card" id=p_77>
-            <div class="p_card_name">玉山銀行 U Bear信用卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/bltf5c12f260b7e3654/5d6387f10c0c016ead6d9f89/C_250x157Y.png?width=178&height=112&auto=webp">
-            <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:1%</span><span class="p_card_data_style">國外:1%</span></div>
-          </li>
-          <li class="p_card" id=p_88>
-            <div class="p_card_name">玉山銀行 漢神巨蛋聯名卡</div><img class="p_card_img" src="https://images.contentstack.io/v3/assets/blt4ca32b8be67c85f8/blt055269f2999f75e9/5d6f50596e51e63c133bef4c/HS_230x144.png?width=178&height=112&auto=webp">
-            <div class="p_card_data"><span class="p_card_data_style">年費:首年免年費</span><span class="p_card_data_style">國內:0.3%</span><span class="p_card_data_style">國外:1%</span></div>
-          </li>
-          <!-- 卡片內容 -->
-
-        </ul>
-      </div>
-
-      <div class="p_select-btn-extend d-none">
-        <div class="p_select_detail">
-          <div class="p_select-font">+ 篩選條件</div>
-          <div class="p_select_detail2">
-            <div class="p_wrap-bank d-none">
-              <span id="p_bank">發卡銀行</span>
-              <form id="p_bank-option">
-                <select size="3" id="p_bank-option-content" name="yourbank">
-                  　<option class="p_option_size" value="玉山銀行">玉山銀行</option>
-                  　<option class="p_option_size" value="國泰世華">國泰世華</option>
-                  　<option class="p_option_size" value="永豐銀行">永豐銀行</option>
-                  　<option class="p_option_size" value="花旗銀行">花旗銀行</option>
-                  　<option class="p_option_size" value="滙豐銀行">滙豐銀行</option>
-                  　<option class="p_option_size" value="渣打銀行">渣打銀行</option>
-                  　<option class="p_option_size" value="中國信託">中國信託</option>
-                  　<option class="p_option_size" value="台新銀行">台新銀行</option>
-                  　<option class="p_option_size" value="台北富邦">台北富邦</option>
-                  <option class="p_option_size" value="星展銀行">星展銀行</option>
-                  <option class="p_option_size" value="王道銀行">王道銀行</option>
-                  <option class="p_option_size" value="新光銀行">新光銀行</option>
-                  <option class="p_option_size" value="聯邦銀行">聯邦銀行</option>
-                  <option class="p_option_size" value="美國運通">美國運通</option>
-                  <option class="p_option_size" value="遠東商銀">遠東商銀</option>
-                  <option class="p_option_size" value="臺灣企銀">臺灣企銀</option>
-                  <option class="p_option_size" value="彰化銀行">彰化銀行</option>
-                  <option class="p_option_size" value="華泰銀行">華泰銀行</option>
-                  <option class="p_option_size" value="華南銀行">華南銀行</option>
-                  <option class="p_option_size" value="第一銀行">第一銀行</option>
-                  <option class="p_option_size" value="高雄銀行">高雄銀行</option>
-                  <option class="p_option_size" value="安泰銀行">安泰銀行</option>
-                  <option class="p_option_size" value="合作金庫">合作金庫</option>
-                  <option class="p_option_size" value="兆豐銀行">兆豐銀行</option>
-                  <option class="p_option_size" value="凱基銀行">凱基銀行</option>
-                  <option class="p_option_size" value="台灣樂天">台灣樂天</option>
-                  <option class="p_option_size" value="臺灣銀行">臺灣銀行</option>
-                  <option class="p_option_size" value="台中銀行">台中銀行</option>
-                  <option class="p_option_size" value="日盛銀行">日盛銀行</option>
-                  <option class="p_option_size" value="元大銀行">元大銀行</option>
-                  <option class="p_option_size" value="土地銀行">土地銀行</option>
-                  <option class="p_option_size" value="三信銀行">三信銀行</option>
-                  <option class="p_option_size" value="上海商銀">上海商銀</option>
-                  <option class="p_option_size" value="陽信銀行">陽信銀行</option>
-
-
-                  <!--                                    要加很多選項-->
-                </select>
-              </form>
-            </div>
-
-            <div class="p_equal p_underline">國內回饋</div>
-            <div class="p_equal">
-              <span class="text-size p_border_style" id="p_in_less1"> &lt 1.00% </span>
-              <span class="text-size p_border_style" id="p_in_bigger1"> &gt 1.00% </span>
-              <span class="text-size p_border_style" id="p_in_bigger25"> &gt 2.50% </span>
-            </div>
-
-            <div class="p_equal p_underline">國外回饋</div>
-            <div class="p_equal">
-              <span class="text-size p_border_style" id="p_out_less2"> &lt 2.00% </span>
-              <span class="p_border_style" id="p_out_bigger2"> &gt 2.00% </span>
-            </div>
-
-            <div class="p_equal p_underline">年費</div>
-            <div class="p_equal">
-              <span class="text-size p_border_style" id="p_y_none"> NTD 0 </span>
-              <span class="text-size p_border_style" id="p_y_less3"> &lt NTD 3000 </span>
-              <span class="p_border_style" id="p_y_bigger3"> &gt NTD 3000 </span>
-            </div>
-
-            <div class="p_equal p_underline">國際組織</div>
-            <div class="p_equal">
-              <span class="text-size p_border_style" id="p_mastercard"> Mastercard </span>
-              <span class="text-size p_border_style" id="p_visa"> VISA </span>
-              <span class="text-size p_border_style" id="p_ae"> AE </span>
-              <span class="p_border_style" id="p_jcb"> JCB </span>
-            </div>
-
-            <div class="p_equal">
-              <input class="submit-size" name="submit" type="submit" value="搜尋" style="margin-left:22%;color:black;background-color:#FFDD00;font-weight:bold;">
-              <input class="submit-size" type="submit" value="取消" id="p_cancel">
-            </div>
-
-
+                <!--                                    要加很多選項-->
+              </select>
+            </form>
           </div>
+
+          <div class="p_equal p_underline">國內回饋</div>
+          <div class="p_equal">
+            <span class="text-size p_border_style" id="p_in_less1"> &lt 1.00% </span>
+            <span class="text-size p_border_style" id="p_in_bigger1"> &gt 1.00% </span>
+            <span class="text-size p_border_style" id="p_in_bigger25"> &gt 2.50% </span>
+          </div>
+
+          <div class="p_equal p_underline">國外回饋</div>
+          <div class="p_equal">
+            <span class="text-size p_border_style" id="p_out_less2"> &lt 2.00% </span>
+            <span class="p_border_style" id="p_out_bigger2"> &gt 2.00% </span>
+          </div>
+
+          <div class="p_equal p_underline">年費</div>
+          <div class="p_equal">
+            <span class="text-size p_border_style" id="p_y_none"> NTD 0 </span>
+            <span class="text-size p_border_style" id="p_y_less3"> &lt NTD 3000 </span>
+            <span class="p_border_style" id="p_y_bigger3"> &gt NTD 3000 </span>
+          </div>
+
+          <div class="p_equal p_underline">國際組織</div>
+          <div class="p_equal">
+            <span class="text-size p_border_style" id="p_mastercard"> Mastercard </span>
+            <span class="text-size p_border_style" id="p_visa"> VISA </span>
+            <span class="text-size p_border_style" id="p_ae"> AE </span>
+            <span class="p_border_style" id="p_jcb"> JCB </span>
+          </div>
+
+          <div class="p_equal">
+            <input class="submit-size" name="submit" type="submit" value="搜尋" style="margin-left:22%;color:black;background-color:#FFDD00;font-weight:bold;">
+            <input class="submit-size" type="submit" value="取消" id="p_cancel">
+          </div>
+
+
         </div>
       </div>
+    </div>
 
 
 
 
 
-      <div class="p_card_display d-none">
-        <div class="p_card_display_header_seperate">
-          <span class="p_card_display_header">
-            <!-- <span class="p_card_display_header_style">國內&lt1%</span>
+    <div class="p_card_display d-none">
+      <div class="p_card_display_header_seperate">
+        <span class="p_card_display_header">
+          <!-- <span class="p_card_display_header_style">國內&lt1%</span>
             <span class="p_card_display_header_style">國外&gt2%</span>
             <span class="p_card_display_header_style">年費&gt3K</span> -->
 
-          </span>
-          <span class="p_card_display_header_style_close" id="p_close">×</span>
-        </div>
+        </span>
+        <span class="p_card_display_header_style_close" id="p_close">×</span>
+      </div>
 
-        <div class="p_card_display_block">
-          <div class="p_card_detail d-none">
+      <div class="p_card_display_block">
+        <div class="p_card_detail d-none">
 
-            <!-- <div class="p_card_page_back">
+          <!-- <div class="p_card_page_back">
               <img class="p_card_page_back_icon" style="margin-left:3%;width:10%" src="https://img.icons8.com/doodle/96/000000/return--v1.png" />
             </div>
             <img class="p_card_detail_img" src=""> -->
 
 
-            <!-- <div class="p_card_detail_data">
+          <!-- <div class="p_card_detail_data">
               <div style="height:7%;width:95%;margin: 0 2.5% 0 2.5%;display:flex;flex-direction:row;padding:2em 0 0 0;">
                 <span class="p_data_btn_1" style="border-radius: 1em;background-color:#F3F3F3;flex:1;padding:0.8% 1% 2% 1%;font-family:Segoe UI;font-size:2.2em;font-weight:bold">優惠訊息
                 </span>
@@ -221,18 +221,45 @@
               </div>
             </div> -->
 
-          </div>
-          <ul class="p_card_list " id="p_list">
 
-            <!-- 卡片內容 -->
 
-          </ul>
         </div>
+        <ul class="p_card_list " id="p_list">
+
+          <!-- 卡片內容 -->
+
+        </ul>
       </div>
     </div>
+  </div>
 
+  <form id="ajax-form">
+    <!--id="ajax-form",type="submit"// field name[html的]-->
+    <!--user: <input type="text" name="USER" value="user1"><br>
+    card: <input id="c_choose" type="text" name="CARD"><br>
+    spend: <input type="text" name="SPEND" value="0"><br>-->
+    <button id="b_choose" type="submit" class="hide d-none">submit via ajax</button>
+    <!--id="ajax-form",type="submit"// field name[html的]-->
+    <input type="hidden" id="u_choose" name="USER"><br> <!-- user: -->
+    <input type="hidden" id="c_choose" type="text" name="CARD"><br> <!-- card: -->
+    <input type="hidden" id="s_choose" name="SPEND"><br> <!-- spend: -->
+    <!--id="ajax-form",type="submit"// field name[html的]-->
+    <input type="hidden" id="m_choose" name="IMG"><br> <!-- user: -->
+    <input type="hidden" id="i_choose" type="text" name="IN"><br> <!-- card: -->
+    <input type="hidden" id="o_choose" name="OUT"><br> <!-- spend: -->
 
-    <script src="main.js"></script>
+    <input type="hidden" id="y_choose" name="YEAR"><br> <!-- user: -->
+    <input type="hidden" id="mon_choose" type="text" name="MONTH"><br> <!-- card: -->
+    <input type="hidden" id="d_choose" name="DATE"><br> <!-- spend: -->
+    <input type="hidden" id="pw_choose" name="PAYWAY"><br> <!-- spend: -->
+  </form>
+  <div class="p_buttom">
+    <span id="home" class="p_bottom_click p_bottom_img" style="flex:1 ;padding-top: 2%;"><img " src=" pic/home.svg" alt="" style="width:19%"></span>
+    <span id="notification" class="p_bottom_img" style="flex:1 ;padding-top: 2%;"><img src="pic/ring.svg" alt="" style="width:19%"></span>
+    <span id="bottom_card" class="p_bottom_img" style="flex:1 ;padding-top: 2%;"><img src="pic/card.svg" alt="" style="width:21%"></span>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 
 </html>

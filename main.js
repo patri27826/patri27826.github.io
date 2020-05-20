@@ -673,6 +673,7 @@ function display() {
       else if (key == 'rate_description') temp3 += "循環信用利率" + "&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp" + value + "<p>";
       else if (key == 'bank') temp3 += "發卡機構" + "&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp" + value + "<p>";
     });
+
     let html =
       '<div class="p_card_page_back">' +
       '  <img class="p_card_page_back_icon" style="margin-left:3%;width:10%" src="https://img.icons8.com/doodle/96/000000/return--v1.png" />' +
@@ -691,8 +692,8 @@ function display() {
       temp2 + '</div> <div class = "p_data_3 d-none"' +
       'style = "width:100%;height:100%;overflow-y:scroll; font-family:Segoe UI;font-weight:bold;font-size:1.8em;color:white;line-height:2em" >' +
       temp3 + '</div></div><div style = "height:15%;width:100%y;margin-top:1em;" > ' +
-      '<span id="' + id + '"class="p_addwallet" style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" >' + '匯入錢包 </span>' +
-      '<span id="' + id + '"class="p_addlike" style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" > 加入收藏 </span>' +
+      '<span class="' + id + '" id="p_addwallet"  style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" >' + '匯入錢包 </span>' +
+      '<span id="p_addlike" style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" > 加入收藏 </span>' +
       '</div > </div>';
     $(html).appendTo('.p_card_detail');
   });
@@ -748,16 +749,41 @@ $(".p_card_detail").on("click", '#p_data_btn_1,#p_data_btn_2,#p_data_btn_3', fun
   }
 });
 $(".p_card_detail").on("click", '#p_addlike,#p_addwallet', function() {
+  let aa = $.ajax({
+    url: "card_data2.json",
+    async: false
+  });
+  let c_data = aa.responseJSON;
+
+
   if ($(this).attr("id") == "p_addlike") {
-    $("#p_addlike").css({
+    $(this).css({
       "color": "#FFDD00"
     }).html("已收藏");
     // use id to add
+
   } else {
     $("#p_addwallet").css({
       "color": "#FFDD00"
     }).html("已加入錢包");
 
+    let id = $("#p_addwallet").attr("class");
+
+    document.getElementById("u_choose").value = "patrick";
+    document.getElementById("c_choose").value = c_data.name[id];
+    document.getElementById("s_choose").value = 0;
+    document.getElementById("m_choose").value = c_data.img[id];
+    document.getElementById("i_choose").value = c_data.v_in[id];
+    document.getElementById("o_choose").value = c_data.v_out[id];
+    $("#b_choose").get(0).click();
   }
+
+});
+$(".p_bottom_img").click(function() {
+  $("#home").removeClass("p_bottom_click");
+  $("#notification").removeClass("p_bottom_click");
+  $("#bottom_card").removeClass("p_bottom_click");
+  $(this).addClass("p_bottom_click");
+
 
 });
