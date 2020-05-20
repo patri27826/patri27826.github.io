@@ -29,13 +29,16 @@ $(".p_hot_card_select").click(function() {
 $("#ham").click(function() {
   if ($("#p_sidebar").hasClass("p_off") == 1) {
     $("#p_sidebar").addClass("p_show").animate({
-      left: "0"
+      left: "0",
+      opacity: "1"
     });
+
     $("#p_sidebar").removeClass("p_off");
   } else {
     if ($("#p_sidebar").hasClass("p_off") == 0) {
       $("#p_sidebar").addClass("p_off").animate({
-        left: "-50%"
+        left: "-50%",
+        opacity: "0.8"
       });
       $("#p_sidebar").removeClass("p_show");
     }
@@ -688,8 +691,8 @@ function display() {
       temp2 + '</div> <div class = "p_data_3 d-none"' +
       'style = "width:100%;height:100%;overflow-y:scroll; font-family:Segoe UI;font-weight:bold;font-size:1.8em;color:white;line-height:2em" >' +
       temp3 + '</div></div><div style = "height:15%;width:100%y;margin-top:1em;" > ' +
-      '<span style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" >' + '匯入錢包 </span>' +
-      '<span style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" > 加入收藏 </span>' +
+      '<span id="' + id + '"class="p_addwallet" style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" >' + '匯入錢包 </span>' +
+      '<span id="' + id + '"class="p_addlike" style = "font-size:2.2em;font-weight:bold;color:white;font-family:Segoe UI;padding:0 5% 2% 5%;margin:2% 0 0 0" > 加入收藏 </span>' +
       '</div > </div>';
     $(html).appendTo('.p_card_detail');
   });
@@ -743,4 +746,18 @@ $(".p_card_detail").on("click", '#p_data_btn_1,#p_data_btn_2,#p_data_btn_3', fun
     });
     $(".p_data_3").removeClass("d-none");
   }
+});
+$(".p_card_detail").on("click", '#p_addlike,#p_addwallet', function() {
+  if ($(this).attr("id") == "p_addlike") {
+    $("#p_addlike").css({
+      "color": "#FFDD00"
+    }).html("已收藏");
+    // use id to add
+  } else {
+    $("#p_addwallet").css({
+      "color": "#FFDD00"
+    }).html("已加入錢包");
+
+  }
+
 });
